@@ -4,6 +4,6 @@ import app.expense.v1.Model.Expense;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repositor
+@Repository
 public interface ExpensesDAO extends JpaRepository<Expense, Long> {
 }
