@@ -3,11 +3,12 @@ package app.expense.v1.Controller;
 import app.expense.v1.Model.Expense;
 import app.expense.v1.Service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("/api")
@@ -24,12 +25,12 @@ public class ExpenseAPI {
     @GetMapping("/expenses")
     public ResponseEntity<List<Expense>> getExpenses() {
         List<Expense> expenses = expenseService.findAll();
-        return new ResponseEntity<>(expenses, HttpStatus.OK);
+        return new ResponseEntity<>(expenses, OK);
     }
 
     @PostMapping("/expenses")
     public ResponseEntity<Expense> save(@RequestBody Expense expense) {
         Expense newExpense = expenseService.save(expense);
-        return new ResponseEntity<>(newExpense, HttpStatus.OK);
+        return new ResponseEntity<>(newExpense, OK);
     }
 }
