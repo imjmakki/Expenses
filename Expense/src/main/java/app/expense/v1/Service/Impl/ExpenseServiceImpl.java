@@ -24,4 +24,10 @@ public class ExpenseServiceImpl implements ExpenseService {
     public List<Expense> findAll() {
         return expenseDAO.findAll();
     }
+
+    @Override
+    public Expense save(Expense expense) {
+        expenseDAO.save(expense);
+        return expense;
+    }
 }
