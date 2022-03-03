@@ -14,6 +14,9 @@ export class ListExpenseComponent implements OnInit {
   constructor(private _expenseService: ExpenseService) { }
 
   ngOnInit(): void {
+    this._expenseService.getExpenses().subscribe(
+      data => this.expenses = data
+    )
   }
 
 }
