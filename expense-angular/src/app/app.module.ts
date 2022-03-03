@@ -22,7 +22,7 @@ const routers: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule.forRoot(routers)
   ],
   providers: [],
   bootstrap: [AppComponent]
