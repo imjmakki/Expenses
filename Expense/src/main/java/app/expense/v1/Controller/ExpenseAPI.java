@@ -29,7 +29,7 @@ public class ExpenseAPI {
 
     @PostMapping("/expenses")
     public ResponseEntity<Expense> save(@RequestBody Expense expense) {
-        Expense addExpense = expenseService.save(expense);
-        return new ResponseEntity<Expense>(addExpense, HttpStatus.CREATED);
+        Expense newExpense = expenseService.save(expense);
+        return new ResponseEntity<>(newExpense, HttpStatus.OK);
     }
 }
