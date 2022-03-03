@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 @CrossOrigin(origins = "*")
 public class ExpenseAPI {
 
@@ -22,9 +22,9 @@ public class ExpenseAPI {
     }
 
     @GetMapping("/expenses")
-    public ResponseEntity<List<Expense>> get() {
+    public ResponseEntity<List<Expense>> getExpenses() {
         List<Expense> expenses = expenseService.findAll();
-        return new ResponseEntity<List<Expense>>(expenses, HttpStatus.OK);
+        return new ResponseEntity<>(expenses, HttpStatus.OK);
     }
 
     @PostMapping("/expenses")
