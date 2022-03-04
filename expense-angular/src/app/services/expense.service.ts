@@ -8,7 +8,7 @@ import {Expense} from "../models/expense";
 })
 export class ExpenseService {
 
-  private getUrl: string = "http://localhost:8080/api/ expenses";
+  private getUrl: string = "http://localhost:8080/api/expenses";
 
   constructor(private _httpClient: HttpClient) { }
 
