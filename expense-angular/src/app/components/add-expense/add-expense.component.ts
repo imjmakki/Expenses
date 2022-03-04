@@ -17,7 +17,9 @@ export class AddExpenseComponent implements OnInit {
   }
 
   saveExpense() {
+    this._expenseService.saveExpense(this.expense).subscribe(
 
+    )
   }
 
 }
