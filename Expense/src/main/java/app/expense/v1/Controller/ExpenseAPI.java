@@ -33,4 +33,9 @@ public class ExpenseAPI {
         Expense newExpense = expenseService.save(expense);
         return new ResponseEntity<>(newExpense, OK);
     }
+
+    @GetMapping("/expenses/{id}")
+    public ResponseEntity<Expense> findExpense(@PathVariable("id") Long id) {
+        expenseService.findById(id);
+    }
 }
