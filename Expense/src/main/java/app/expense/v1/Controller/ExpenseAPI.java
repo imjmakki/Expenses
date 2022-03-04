@@ -36,6 +36,7 @@ public class ExpenseAPI {
 
     @GetMapping("/expenses/{id}")
     public ResponseEntity<Expense> findExpense(@PathVariable("id") Long id) {
-        expenseService.findById(id);
+        Expense expense = expenseService.findById(id);
+        return new ResponseEntity<>(expense, OK);
     }
 }
