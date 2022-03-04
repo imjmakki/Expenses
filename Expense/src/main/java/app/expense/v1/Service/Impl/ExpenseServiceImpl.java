@@ -30,4 +30,9 @@ public class ExpenseServiceImpl implements ExpenseService {
         expenseDAO.save(expense);
         return expense;
     }
+
+    @Override
+    public Expense findById(Long id) {
+        return null;
+    }
 }

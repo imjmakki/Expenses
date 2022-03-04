@@ -10,4 +10,5 @@ public interface ExpenseService {
 
     List<Expense> findAll();
     Expense save(Expense expense);
+    Expense findById(Long id);
 }
