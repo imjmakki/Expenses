@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Expense} from "../../models/expense";
+import {ExpenseService} from "../../services/expense.service";
 
 @Component({
   selector: 'app-add-expense',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddExpenseComponent implements OnInit {
 
-  constructor() { }
+  expense: Expense = new Expense();
+
+  constructor(private _expenseService: ExpenseService) { }
 
   ngOnInit(): void {
+  }
+
+  saveExpense() {
+
   }
 
 }

@@ -8,7 +8,7 @@ import {Expense} from "../models/expense";
 })
 export class ExpenseService {
 
-  private getUrl: string = "http://localhost:8080/api/expenses";
+  private getUrl: string = "http://localhost:8080/api/ expenses";
 
   constructor(private _httpClient: HttpClient) { }
 
@@ -16,5 +16,9 @@ export class ExpenseService {
     return this._httpClient.get<Expense[]>(this.getUrl).pipe(
       map(response => response)
     )
+  }
+
+  saveExpense(expense: Expense): Observable<Expense> {
+    return this._httpClient.post<Expense>(this.getUrl, expense);
   }
 }
