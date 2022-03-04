@@ -22,7 +22,7 @@ export class AddExpenseComponent implements OnInit {
     this._expenseService.saveExpense(this.expense).subscribe(
       data => {
         console.log('response', data);
-
+        this._router.navigateByUrl("/expense");
       }
     )
   }
