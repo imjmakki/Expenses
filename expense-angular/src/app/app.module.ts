@@ -11,6 +11,7 @@ import { AddExpenseComponent } from './components/add-expense/add-expense.compon
 const routers: Routes = [
   { path: 'expenses', component: ListExpenseComponent },
   { path: 'add-expense', component: AddExpenseComponent },
+  { path: 'edit-expense/:id', component: AddExpenseComponent },
   { path: '', redirectTo: '/expenses', pathMatch: 'full' },
 ];
 

@@ -29,7 +29,7 @@ public class ExpenseAPI {
     }
 
     @PostMapping("/expenses")
-    public ResponseEntity<Expense> save(@RequestBody Expense expense) {
+    public ResponseEntity<Expense> saveExpense(@RequestBody Expense expense) {
         Expense newExpense = expenseService.save(expense);
         return new ResponseEntity<>(newExpense, OK);
     }
@@ -38,5 +38,11 @@ public class ExpenseAPI {
     public ResponseEntity<Expense> findExpense(@PathVariable("id") Long id) {
         Expense expense = expenseService.findById(id);
         return new ResponseEntity<>(expense, OK);
+    }
+
+    @DeleteMapping("/expenses/{id}")
+    public ResponseEntity<String> deleteExpense(@PathVariable("id") Long id) {
+        expenseService.delete(id);
+        return new ResponseEntity<String>("Expense is deleted", OK);
     }
 }

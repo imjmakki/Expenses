@@ -1,6 +1,18 @@
-<a routerLink="/add-expense">Add Expense</a>
+<a routerLink="/add-expense">Add</a>
 
+<input type="text"
+        [(ngModel)]="filters.keyword"
+        name="keyword"
+        (input)="listExpenses()"/>
+<select name="sortBy" [(ngModel)]="filters.sortBy" (change)="listExpenses()">
+  <option>Name</option>
+  <option>Amount</option>
+</select>
 <div *ngFor="let expense of expenses">
   <h3>{{ expense.expense }}</h3>
   <p>{{ expense.amount | currency: 'USD' }}</p>
+  <a routerLink="/edit-expense/{{ expense.id }}">Edit</a>
+  <button (click)="deleteExpense(expense.id)">
+    Delete
+  </button>
 </div>

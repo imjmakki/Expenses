@@ -34,8 +34,15 @@ public class ExpenseServiceImpl implements ExpenseService {
     @Override
     public Expense findById(Long id) {
         if(expenseDAO.findById(id).isPresent()) {
-            expenseDAO.findById(id).get();
+            return expenseDAO.findById(id).get();
         }
         return null;
+    }
+
+    @Override
+    public void delete(Long id) {
+        Expense expense = findById(id);
+        expenseDAO.delete(expense);
+
     }
 }
